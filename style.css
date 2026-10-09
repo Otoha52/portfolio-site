@@ -1,0 +1,91 @@
+* {box-sizing: border-box; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+body {
+    background: #ffffff;
+    color: #000000;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    padding: 0px 30px;
+    background: #ffffff;
+    height: 75px;
+    top: 0;
+}
+nav {
+    display: flex;
+    gap: 28px;
+}
+section {
+    padding: 10px 30px;
+}
+footer {
+    padding: 20px 30px;
+    font-size: 11px;
+}
+nav a:hover {
+    color: #9c9393
+}
+#top {
+    padding-top: 75px;
+}
+
+/*Works*/
+#works-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.work-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.work-card {
+    border: 1px soild #000000;
+}
+
+.word-card h4{
+    margin: 15px 15px 5px;
+}
+
+.word-card p {
+    margin: 0 15px 15px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.work-card:hover {
+    opacity: 0.7;
+}
+.works-contorls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.works-contorls select {
+    padding: 10px;
+    font-size: 16px;
+}
+.work-cataegory {
+    font-size: 4px;
+    padding-top: 14px;
+    color: #9c9c9c;
+}
+.work-year {
+    font-size: 10px;
+    margin-top: 10px;
+}
