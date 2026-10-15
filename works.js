@@ -21,14 +21,15 @@ fetch("works.csv")
             });
         
             return work;
-        });
 
+        });
         //Worksを表示する場所 //HTML要素を取得
         var grid = document.getElementById("works-grid");
-
+        
         var categorySelect = document.getElementById("category");
 
         var sortSelect = document.getElementById("sort");
+
 
         //カテゴリー覧を作る
         var categories = [];
@@ -62,12 +63,11 @@ fetch("works.csv")
             //カテゴリを絞り込む
             if (selectedCategory !== "all") {
                 filteredWorks = filteredWorks.filter(function(work) {
-                    return work.category == selectedCategory;
+                    return work.category === selectedCategory;
                 });
             }
-
             //ソート
-            if (sortType == "new") {
+            if (sortType === "new") {
                 filteredWorks.sort(function(a, b) {
                     return Number(b.year) - Number(a.year);
                 });
@@ -82,9 +82,9 @@ fetch("works.csv")
                     return a.title.localeCompare(b.title, "ja");
                 });
             }
-
             //画像を一度空にする
             grid.innerHTML = "";
+
 
             //作品を1つずつ表示
             filteredWorks.forEach(function(work) {
@@ -107,7 +107,7 @@ fetch("works.csv")
                 grid.appendChild(card);
             });
         }
-
+    
         //最初に表示
         displayWorks();
 
@@ -120,4 +120,42 @@ fetch("works.csv")
         sortSelect.addEventListener("change", function() {
             displayWorks();
         });
-    
+    })
+var latitude = 35.6895;
+var longitude = 139.6917;
+
+var weatherURL =
+    "https://api.open-meteo.com/v1/forecast" +
+    "?latitude=" + latitude +
+    "&longitude=" + longitude +
+    "&current=temperature_2m,weather_code" +
+    "&timezone=Asia%2FTokyo";
+fetch(weatherURL)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        var weatherCode = data.current.weather_code;
+        showWeather(weatherCode);
+    })
+function showWeather(code) {
+
+    var icon = document.getElementById("weather-icon");
+
+    if (code === 0) {
+        icon.textContent = "*";
+        document.body.className = "weather-sunny";
+
+    } else if (code >= 1 && code <= 3) {
+        icon.textContent = "☁";
+        document.body.className = "weather-cloudy";
+
+    } else if (code >= 51 && code <= 67) {
+        icon.textContent = "☂";
+        document.body.className = "weather-rainy";
+    } else {
+        icon.textContent = "☁";
+        document.body.className = "weather-cloudy"
+    }
+}
+

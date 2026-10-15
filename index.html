@@ -2,7 +2,7 @@
 <html lang ="ja">
     <head>
             <meta charset="UTF-8">
-            <mea name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Otoha Suda</title>
             <link rel="stylesheet" href="style.css">
     </head>
@@ -11,17 +11,18 @@
             <a href="#top">Otoha Suda</a>
             <nav>
                 <a href="#about">About</a>
-                <a href="#works">Works</a>
-                <a href="#favorites">Favorites</a>
+                <a href="#trips">Trips</a>
+                <a href="#music">Music</a>
             </nav>
         </header>
         <main>
             <section id="top">
-                <img src="./media/オーロラ.jpg" width="80%">
+                <img src="./media/top_s.jpg" width="80%">
                 <h1>
                     Otoha Suda<br>
                     Portfolio
                 </h1>
+                <p id="weather-icon"> </p>
             </section>
             <section id="about">
                 <h3>About</h3>
@@ -31,16 +32,16 @@
                 </p>
                 <p>
                     専門：なし<br>
-                    スキル：英語
+                    スキル：英語が得意
                 </p>
             </section>
-            <section id="works">
-                <h3>Works</h3>
-                <div class="works-contorls">
+            <section id="trips">
+                <h3>Trips</h3>
+                <div class="works-controls">
                     <select id="category">
                         <option value="all">すべてのカテゴリー</option>
                     </select>
-                    <select>
+                    <select id="sort">
                         <option value="new">新しい順</option>
                         <option value="old">古い順</option>
                         <option value="title">タイトル順</option>
@@ -48,29 +49,30 @@
                 </div>
                 <div id="works-grid"></div>
             </section>
-            <section id="Favorites">
-                <h3>Favorites</h3>
-                <p>
-                    Music<br>
+            <section id="music">
+                <h3>Music</h3>
                 <ul>
-                        <li>Sunflower/ Post Malone & Swae Lee
-                        <li>Material Lover/ Seinna Spiro
-                        <li>From The Start/ Laufey
+                    <li>
+                     Sunflower<br>
+                     <img src="./media/sunflower.jpg" alt="Sunflower" width="150">
+                    </li>
+
+                    <li>
+                        Material Lover<br>
+                        <img src="./media/material.jpg" alt="Material Lover" width="150">
+                     </li>
+
+                    <li>
+                        From The Start<br>
+                        <img src="./media/fromthestart.jpg" alt="From The Start" width="150">
+                     </li>
                 </ul>
-                </p>
-                <p>
-                    Music<br>
-                <ul>
-                        <li>Sunflower/ Post Malone & Swae Lee
-                        <li>Material Lover/ Seinna Spiro
-                        <li>From The Start/ Laufey
-                </ul>
-                </p>
             </section>
         </main>
         <footer>
             <span>© 2026 Otoha Suda</span>
-        </footer>  
+        </footer>
         <script src="works.js"></script>  
+        <script src="music.js"></script>  
     </body>
 </html>
